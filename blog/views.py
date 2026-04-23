@@ -11,30 +11,22 @@ from .forms import SuscribeForm
 class ListBlog(ListView):
     model = Blog
     template_name = "blog/list_blog.html"
-    context_object_name = "Blogs"
+    context_object_name = "blogs"
 
 
 # See Blog detail
 class DetailBlog(DetailView):
     model = Blog
     template_name = "blog/detail_blog.html"
-    context_object_name = "Blog"
+    context_object_name = "blog"
 
 
 # Create a Blog new with Name, Image (Optional), Description, Date created
 class CreateBlog(CreateView):
     model = Blog
     template_name = "blog/create_blog.html"
-    fields = ("name", "image", "description", "created_at")
+    fields = ["name", "image", "category", "content", "created_at"]
     success_url = reverse_lazy("blog_list")
-
-
-# Modify information and data of Blog
-class ModifyBlog(UpdateView):
-    model = Blog
-    template_name = "blog/modify_blog.html"
-    fields = ("name", "description")
-    success_url = reverse_lazy("blog_detail")
 
 
 # Delete a Blog by Site's
@@ -67,7 +59,7 @@ def form_suscribe(request):
                     "Email del Nuevo seguidor": email,
                 }
 
-                return render(request, "", context)
+                return render(request, "home/form.html", context)
         
         else:
             return f"No puedes dejar el Formulario vacio"

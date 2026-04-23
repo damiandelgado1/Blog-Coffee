@@ -1,17 +1,17 @@
 from django.shortcuts import render
 
-# See all Blog's in Site
+# Display Main Page of the Blog
+def main_page(request):
+    return render(request, "home/layout.html")
+
+# Display Blog's by the Site
 def blog_list(request):
-    return render(request, "")
+    return render(request, "blog/blog_list.html")
 
+# Display Main Page of the Blog
 def blog_detail(request):
-    return render(request, "")
+    return render(request, "blog/blog_detail.html")
 
-def blog_create(request):
-    return render(request, "")
-
-def blog_modify(request):
-    return render(request, "")
-
-def blog_delete(request):
-    return render(request, "")
+# Display Main Page of the Blog
+def form_page(request):
+    return render(request, "home/form.html")

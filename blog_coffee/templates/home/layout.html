@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog sobre el Cafe de Especialidad</title>
+</head>
+<body>
+    <!-- Header with Name and Description about the Page -->
+    <header>
+        {% include '_includes/header.html' %}
+    </header>
+
+    <main>
+        {% include '_includes/home.html' %}
+    </main>
+
+    <!-- Navegation and Content about theme's of the Coffee -->
+    <section>
+        {% include 'blog/list_blog.html' %}
+    </section>
+
+    <!-- Form to suscribe Blog and Copyright Section -->
+    <footer>
+        {% include 'form.html' %}
+        {% include '_includes/footer.html' %}
+    </footer>
+</body>
+</html>

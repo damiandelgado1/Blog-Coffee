@@ -1,0 +1,14 @@
+{% extends 'blog/blog_detail.html' %}
+
+{% block title %} {{ blog.name }} {% endblock %}
+
+{% block content %}
+
+    <h3>¿Quieres Eliminar el Blog? {{blog.name}} </h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button>Eliminar Blog</button>
+    </form>
+
+{% endblock %}
