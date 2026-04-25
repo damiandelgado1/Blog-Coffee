@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView
+from django.views.generic import CreateView, DeleteView, ListView, DetailView
 from .models import Blog
 from .forms import SuscribeForm
 
@@ -25,41 +25,35 @@ class DetailBlog(DetailView):
 class CreateBlog(CreateView):
     model = Blog
     template_name = "blog/create_blog.html"
-    fields = ["name", "image", "category", "content", "created_at"]
-    success_url = reverse_lazy("blog_list")
+    fields = ["name", "image", "category", "content"]
+    success_url = reverse_lazy("blog:blog_list")
 
 
 # Delete a Blog by Site's
 class DeleteBlog(DeleteView):
     model = Blog
     template_name = "blog/delete_blog.html"
-    success_url = reverse_lazy("blog_list")
+    success_url = reverse_lazy("home")
 
 
 # Form for suscribe Blog
 def form_suscribe(request):
-    if request.POST:
+    if request.method == "POST":
         form = SuscribeForm(request.POST)
 
         if form.is_valid():
-            name = form.cleaned_data("first_name")
-            last_name = form.cleaned_data("last_name")
-            email = form.cleaned_data("email")
+            name = form.cleaned_data["first_name"]
+            last_name = form.cleaned_data["last_name"]
+            email = form.cleaned_data["email"]
 
             if "@gmail.com" not in email:
-                messages.error("El email no se Ingreso Correctamente")
+                messages.error(request, "El email no se Ingreso Correctamente")
 
             else:
                 messages.success(request, "La suscripcion al Blog se ha hecho correctamente")
                 form.save()
-
-                context = {
-                    "Nombre del Nuevo seguidor": name,
-                    "Apellido": last_name,
-                    "Email del Nuevo seguidor": email,
-                }
-
-                return render(request, "home/form.html", context)
         
-        else:
-            return f"No puedes dejar el Formulario vacio"
+    else:
+        form = SuscribeForm()
+    
+    return render(request, "home/form.html", {"form": form})

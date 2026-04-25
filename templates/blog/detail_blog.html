@@ -5,13 +5,14 @@
 {% block content %}
 
     <article>
-        <img href="{{ blog.image }}"></img>
+        <img src="{{ blog.image }}"></img>
         <br>
         <h3> {{blog.name}} </h3>
         <p> {{blog.category}} </p>
-        <p> {{blog.description}} </p>
+        <p> {{blog.content}} </p>
         <p> Fecha de Publicacion: {{blog.created_at}} </p>
-        <a href="{% url 'blog:blog_list' %}">Volver al Inicio</a>
+        <a href="{% url 'home' %}">Volver al Inicio</a>
+        <a href="{% url 'blog:delete_blog' blog.pk %}"> Eliminar Blog </a>
     </article>
 
 {% endblock %}

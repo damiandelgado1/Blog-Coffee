@@ -1,17 +1,9 @@
 from django.shortcuts import render
+from blog.models import Blog
+from blog.forms import SuscribeForm
 
 # Display Main Page of the Blog
 def main_page(request):
-    return render(request, "home/layout.html")
-
-# Display Blog's by the Site
-def blog_list(request):
-    return render(request, "blog/blog_list.html")
-
-# Display Main Page of the Blog
-def blog_detail(request):
-    return render(request, "blog/blog_detail.html")
-
-# Display Main Page of the Blog
-def form_page(request):
-    return render(request, "home/form.html")
+    form = SuscribeForm()
+    blogs = Blog.objects.all()
+    return render(request, "home/home.html", {"form": form, "blogs": blogs})
