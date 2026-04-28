@@ -6,11 +6,15 @@
 
 <a href="{% url 'blog:create_blog' %}"> Crear Nuevo Blog </a>
 
-{% for blog in blogs %}
-    <article>
-        <h3> {{ blog.name }} </h3>
-        <img src="{{ blog.image }}"></img>
-        <p> {{ blog.created_at }} </p>
-        <a href="{% url 'blog:blog_detail' blog.pk %}">Ver Mas</a>
-    </article>
-{% endfor %}
+{% block blog %}
+
+    {% for blog in blogs %}
+        <article>
+            <h3> {{ blog.name }} </h3>
+            <img src="{{ blog.image }}"></img>
+            <p> {{ blog.created_at }} </p>
+            <a href="{% url 'blog:blog_detail' blog.pk %}">Ver Mas</a>
+        </article>
+    {% endfor %}
+
+{% endblock %}
