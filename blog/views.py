@@ -23,8 +23,8 @@ class DetailBlog(DetailView):
 class CreateBlog(CreateView):
     model = Blog
     template_name = "blog/create_blog.html"
-    fields = ["name", "image", "category", "content"]
-    success_url = reverse_lazy("blog:blog_list")
+    fields = ["name", "image", "preview", "category", "content"]
+    success_url = reverse_lazy("home")
 
 
 # Delete a Blog by Site's

@@ -9,6 +9,12 @@
         existen, como se <strong> prepara </strong>  un buen <strong> Cafe de Especialidad </strong>, <br>
         los <strong> Granos de Cafe </strong> para hacer cafe de especialidad, etc.
     </p>
-    
+
+    <a href="{% url 'blog:create_blog' %}"> Crear Blog </a> <br>
+    <a href="{% url 'category:create_category' %}"> Crear categoria </a>
+
+{% endblock %}
+
+{% block blog %}
     {% include 'blog/list_blog.html' %}
 {% endblock %}

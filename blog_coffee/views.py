@@ -10,14 +10,6 @@ def main_page(request):
     return render(request, "home/home.html", {"form": form, "blogs": blogs})
 
 
-# Filter Blog by category
-def filter_category(request):
-    category = Blog.objects.get(category=category)
-    blogs = Blog.objects.all()
-
-    return render(request, "blog/list_blog.html", {"blogs": blogs, "categoria": category})
-
-
 # Form for suscribe Blog
 def form_suscribe(request):
     if request.method == "POST":
@@ -29,10 +21,10 @@ def form_suscribe(request):
             email = form.cleaned_data["email"]
 
             if "@gmail.com" not in email:
-                messages.error(request, "El email no se Ingreso Correctamente")
+                messages.add_message(request, messages.ERROR, f"El email no se Ingreso Correctamente")
 
             else:
-                messages.success(request, "La suscripcion al Blog se ha hecho correctamente")
+                messages.add_message(request, messages.SUCCESS, f"La suscripcion al Blog se ha hecho correctamente")
                 form.save()
         
     else:

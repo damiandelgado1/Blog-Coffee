@@ -1,10 +1,12 @@
 from django.db import models
+from category.models import Category
 
 # Blog information about Coffee
 class Blog(models.Model):
     name = models.CharField(max_length=50, blank=True, default="Blog sobre Cafe", verbose_name="Blog")
     image = models.ImageField(upload_to="", blank=True, null=True)
-    category = models.CharField(max_length=50, blank=True, default="Categoria del Blog", verbose_name="Categoria")
+    preview = models.TextField(verbose_name="Contenido de Previsualizacion")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="blogs", verbose_name="Categoria del Blog")
     content = models.TextField(blank=True, verbose_name="Descripcion del Blog creado")
     created_at = models.DateTimeField(max_length=50, auto_now_add=True, verbose_name="Fecha de Creacion")
 
