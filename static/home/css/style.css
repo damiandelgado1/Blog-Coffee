@@ -8,6 +8,15 @@ body {
     text-align: center;
 }
 
+header {
+    padding: 100px 0px 0px 0px;
+}
+
+main {
+    padding-top: 10px;
+    padding-bottom: 200px;
+}
+
 button {
     background-color: #2F241B;
     border: none;
@@ -29,12 +38,29 @@ a {
     text-decoration: none;
 }
 
+.blog {
+    background-color: #7C5C40;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 18px;
+    width: 330px;
+    height: 450px;
+    text-align: left;
+}
+
+.content-blog {
+    padding: 7px;
+}
+
 .key-concept {
     color: #7C5C40;
 }
 
 footer {
     background-color: #7C5C40;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    margin-top: 100px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }

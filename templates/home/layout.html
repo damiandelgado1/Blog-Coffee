@@ -15,7 +15,6 @@
     <header>
         {% include '_includes/header.html' %}
     </header>
-    <br>
 
     <main>
         {% block content %}{% endblock %}
@@ -24,7 +23,7 @@
 
     <!-- Navegation and Content about theme's of the Coffee -->
     <section>
-        {% block blog %}{% endblock %}
+        {% include 'blog/list_blog.html' %}
     </section>
     <br>
     <br>
