@@ -1,7 +1,22 @@
-<h3>Crear Categoria</h3>
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Akronim&family=GFS+Didot&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Crear categoria</button>
-</form>
+{% block content %}
+
+    <h3>Crear Categoria</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="{{ form.name_category.id_for_label }}"> NOMBRE DE LA CATEGORIA </label> <br>
+            {{ form.name_category }}
+        </div>
+        <br>
+
+        <button type="submit"> CREAR CATEGORIA </button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+body {
+    background-color: #272727;
+    color: white;
+    font-family: Afacad;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+button {
+    background-color: #2F241B;
+    border: none;
+    color: white;
+    font-family: Afacad;
+    padding: 7px;
+}
+
+button:hover {
+    background-color: #1f1812;
+}
+
+button:active {
+    background-color: #1a140f;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.key-concept {
+    color: #7C5C40;
+}
+
+footer {
+    background-color: #7C5C40;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

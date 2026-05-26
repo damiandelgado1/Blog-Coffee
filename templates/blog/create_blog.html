@@ -1,7 +1,48 @@
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Akronim&family=GFS+Didot&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+
 <h3>Crear Nuevo Blog</h3>
 
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Crear Nuevo Blog</button>
+    <div>
+        <label for="{{ form.name.id_for_label }}"> NOMBRE DEL BLOG </label> <br>
+        {{ form.name }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.image.id_for_label }}"> SUBIR IMAGENES DEL BLOG </label> <br>
+        {{ form.image }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.preview.id_for_label }}"> CONTENIDO DE PREVISUALIZACION </label> <br>
+        {{ form.preview }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.category.id_for_label }}"> CATEGORIA DEL BLOG </label> <br>
+        {{ form.category }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.content.id_for_label }}"> CONTENIDO </label> <br>
+        {{ form.content }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.created_at.id_for_label }}"> CREADO EN </label> <br>
+        {{ form.created_at }}
+    </div>
+    <br>
+
+    <button type="submit"> CREAR NUEVO BLOG </button>
 </form>
