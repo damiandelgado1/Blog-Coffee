@@ -4,16 +4,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Akronim&family=GFS+Didot&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
 
-{% block content %}
-
-    <article>
-        <br>
-        <h3> {{blog.name}} </h3>
-        <p> {{blog.category}} </p>
-        <p> {{blog.content}} </p>
-        <p> Fecha de Publicacion: {{blog.created_at}} </p>
-        <button> <a href="{% url 'home' %}"> VOLVER AL INICIO </a> </button>
-        <button> <a href="{% url 'blog:delete_blog' blog.pk %}"> ELIMINAR BLOG </a> </button>
-    </article>
-
-{% endblock %}
+<article>
+    <br>
+    <h3> {{blog.name}} </h3>
+    <p> {{blog.category}} </p>
+    <p> {{blog.content}} </p>
+    <p> Fecha de Publicacion: {{blog.created_at}} </p>
+    <button> <a href="{% url 'home' %}"> VOLVER AL INICIO </a> </button>
+    <button> <a href="{% url 'blog:delete_blog' blog.pk %}"> ELIMINAR BLOG </a> </button>
+</article>

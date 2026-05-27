@@ -38,6 +38,10 @@ a {
     text-decoration: none;
 }
 
+.content-blog {
+    padding: 7px;
+}
+
 .blog {
     background-color: #7C5C40;
     margin-top: 5px;
@@ -48,10 +52,6 @@ a {
     width: 330px;
     height: 450px;
     text-align: left;
-}
-
-.content-blog {
-    padding: 7px;
 }
 
 .key-concept {
