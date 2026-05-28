@@ -54,6 +54,11 @@ a {
     text-align: left;
 }
 
+.detail-blog {
+    width: 430px;
+    height: 550px;
+}
+
 .key-concept {
     color: #7C5C40;
 }

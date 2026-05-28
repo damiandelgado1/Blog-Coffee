@@ -4,8 +4,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Akronim&family=GFS+Didot&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
 
-<article>
-    <br>
+<article class="detail-blog">
+    <img src="{{ blog.image.url }}" width="300">
     <h3> {{blog.name}} </h3>
     <p> {{blog.category}} </p>
     <p> {{blog.content}} </p>

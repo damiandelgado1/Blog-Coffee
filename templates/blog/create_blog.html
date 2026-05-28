@@ -6,7 +6,7 @@
 
 <h3>Crear Nuevo Blog</h3>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div>
         <label for="{{ form.name.id_for_label }}"> NOMBRE DEL BLOG </label> <br>

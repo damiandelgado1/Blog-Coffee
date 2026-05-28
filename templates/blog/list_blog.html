@@ -3,6 +3,7 @@
 <section>
     {% for blog in blogs %}
         <article class="blog">
+            <img src="{{ blog.image.url }}" width="300">
             <h3> {{ blog.name }} </h3>
             <p> {{ blog.preview }} </p>
             <p> {{ blog.created_at }} </p>
